@@ -1,4 +1,5 @@
 import { useState,useEffect } from "react"
+import './posts.css'
 
 const Posts = () => {
     const [postData, setPostData] = useState(null);
@@ -27,7 +28,7 @@ const Posts = () => {
     }
 
   return (
-    <>
+    <div className="posts">
     <h1>Blog Posts </h1>
     {postData.map((post)=>(
         <div key={post.id}>
@@ -35,7 +36,7 @@ const Posts = () => {
             <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </div>
     ))}
-    </>
+    </div>
   )
 }
 
